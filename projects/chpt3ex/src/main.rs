@@ -33,20 +33,47 @@ fn main() {
 }
 
 fn twelve_days_of_christmas() {
-    let lyrics = "";
 
-    for d in 1..13 {
-        let mut day = String::new();
+    let gifts = Vec::from([
+        "a partridge in a pair tree",
+        "two turtle doves",
+        "three french hens",
+        "four calling birds",
+        "five gold rings",
+        "six geese a-laying",
+        "seven swans a-swimming",
+        "eight maids a-milking",
+        "nine ladies dancing",
+        "ten lords a-leaping",
+        "eleven pipers piping",
+        "twelve drummers drumming"
+    ]);
 
-        if d == 1 {
-            day = String::from("first");
-        } else if d == 2 {
-            day = String::from("second");
+    let days = Vec::from([
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eigth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelveth",
+    ]);
+
+    for i in 1..12 {
+        let day = days[i-1];
+        println!("On the {} of Christmas, my true love gave to me:", day);
+        for v in &gifts[0..i+1] {
+            println!("{}", v);
         }
-        println!("On the {day} day of Christmas, \nmy true love gave to me\n");
+        println!("\n");
     }
-    println!("{lyrics}");
 }
+
 fn f_to_c(temp_f: f32) -> f32 {
     let temp_c: f32 = (temp_f - 32f32) * (5f32/9f32);
     return temp_c;
