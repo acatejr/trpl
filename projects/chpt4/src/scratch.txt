@@ -1,0 +1,15 @@
+scratch.txt
+// let mut s = String::from("Hello, world!");
+    // s.push_str(", word");
+    // println!("{s}");
+
+    // let s_len = calc_len(&s);
+    // println!("The string length is: {s_len}");
+    // println!("{s}");
+
+    // change(&mut s);
+    // println!("{s}");
+
+    // let word = String::from("abcdefg");
+    // let fw = first_word(&word);
+    // println!("{fw}");

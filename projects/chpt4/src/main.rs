@@ -1,20 +1,24 @@
 fn main() {
-    let mut s = String::from("Hello, world!");
-    s.push_str(", word");
-    println!("{s}");
-
-    let s_len = calc_len(&s);
-    println!("The string length is: {s_len}");
-    println!("{s}");
-
-    change(&mut s);
-    println!("{s}");
+    let word = String::from("abc defg");
+    let fw = first_word(&word);
+    println!("{fw}");
 }
 
-fn calc_len(s: &String) -> usize {
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
     s.len()
 }
 
-fn change(some_str: &mut String) {
-    some_str.push_str(", world world");
-}
+// fn calc_len(s: &String) -> usize {
+//     s.len()
+// }
+
+// fn change(some_str: &mut String) {
+//     some_str.push_str(", world world");
+// }
