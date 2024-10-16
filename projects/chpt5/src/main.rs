@@ -6,7 +6,15 @@ fn main() {
         sign_in_count: 1,
     };
 
-    // println!("User email {}", user1.email);
+    let user2 = build_user(String::from("user2@example.com"), String::from("user2"));
+    let user3 = User {
+        email: String::from("user3@example.com"),
+        ..user1
+    };
+
+    println!("User email {}", user1.email);
+    println!("User email {}", user2.email);
+    println!("User email {}", user3.email);
 }
 
 struct User {
@@ -14,4 +22,13 @@ struct User {
     username: String,
     email: String,
     sign_in_count: u64,
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username,
+        email,
+        sign_in_count: 1,
+    }
 }
